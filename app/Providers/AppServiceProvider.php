@@ -11,7 +11,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // AQUI SE REGISTRAN LOS SERVICIOS DE LA APLICACIÓN
+        // $this->app->bind('App\Services\SesionService','App\Services\Implementations\SesionServiceImpl');
     }
 
     /**
@@ -19,6 +20,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // AQUI SE INICIALIZAN LOS SERVICIOS DE LA APLICACIÓN
     }
 }

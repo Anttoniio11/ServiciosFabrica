@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Services\ProductService;
+use App\Services\Impl\ProductServiceImpl;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -12,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         // AQUI SE REGISTRAN LOS SERVICIOS DE LA APLICACIÓN
-        // $this->app->bind('App\Services\SesionService','App\Services\Implementations\SesionServiceImpl');
+         $this->app->bind(ProductService::class, ProductServiceImpl::class);
     }
 
     /**

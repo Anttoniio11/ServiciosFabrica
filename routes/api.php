@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,6 @@ Route::prefix('products')->group(function () {
 Route::prefix('usuarios')->group(function () {
     Route::post('/', [UsuarioController::class, 'create']);
 });
+
+
+

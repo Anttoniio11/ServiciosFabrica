@@ -11,17 +11,11 @@
         <p style="color:green;">{{ session('success') }}</p>
     @endif
 
-    <ul>
-        @foreach ($products as $product)
-            <li>{{ $product->nombre }} - ${{ $product->precio ?? 'N/A' }}</li>
-        @endforeach
-    </ul>
-
     <hr>
 
     <h2>Crear nuevo usuario</h2>
 
-    <form method="POST" action="{{ route('usuarios.store') }}">
+    <form method="POST" action="{{ route('usuario.crear') }}">
         @csrf
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" id="nombre" required><br>
@@ -31,5 +25,21 @@
 
         <button type="submit">Crear Usuario</button>
     </form>
+
+    <hr>
+
+    <h2>Crear nuevo producto</h2>
+
+    <form method="POST" action="{{ route('dashboard.products.store') }}">
+        @csrf
+        <label for="nombre">Nombre del producto:</label>
+        <input type="text" name="nombre" id="nombre" required><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" step="0.01" name="precio" id="precio" required><br>
+
+        <button type="submit">Crear Producto</button>
+    </form>
+
 </body>
 </html>
